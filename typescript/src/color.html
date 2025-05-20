@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Palette Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    #paletteContainer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .colorBox {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      user-select: none;
+      transition: transform 0.2s;
+      position:relative;
+
+    }
+    .colorBox:hover {
+      transform: scale(1.1);
+    }
+
+    .fav{
+        position:absolute;
+        right: 0;
+        top:0;
+        border:none;
+    }
+    
+    .fav:hover{
+        transform: scale(1.6);
+    }
+
+    #generateBtn {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #generateBtn:hover {
+      background-color: #0056b3;
+    }
+    #favoritesContainer {
+      margin-top: 30px;
+    }
+    #favoritesContainer h2 {
+      text-align: center;
+    }
+    #favoritesList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .favoritePalette {
+      display: flex;
+      gap: 5px;
+      border: 1px solid #ddd;
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .favoriteColorBox {
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Palette Generator</h1>
+  <div id="paletteContainer">
+    <!-- Colors will be generated here -->
+  </div>
+  <button id="generateBtn">Generate Palette</button>
+
+  <div id="favoritesContainer">
+    <h2>Favorites</h2>
+    <div id="favoritesList">
+      <!-- Favorite palettes will appear here -->
+    </div>
+  </div>
+  <script src="../dist/color.js"></script>
+</body>
+</html>
