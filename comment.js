@@ -33,10 +33,10 @@ let commentInput = document.querySelector("#commentInput")
     button.style.backgroundColor="green"
     div2.append(button)
     
-        const mainDiv = document.createElement
-    
-    li.append(div1,div2)
-
+        const mainDiv = document.createElement("div")
+        mainDiv.classList.add("mainDiv")
+        mainDev.append(div1,div2)
+        li.append(mainDev)
 
 
     li.classList.add("comment")
