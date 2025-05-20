@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Search Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    input[type="search"], input[type="text"] {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    input[type="search"]:focus, input[type="text"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    #addContainer {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    #addInput {
+      flex: 1;
+    }
+    #addBtn {
+      padding: 0 1rem;
+      font-size: 1rem;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    #addBtn:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #eee;
+      font-size: 1rem;
+      color: #333;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+    .deleteBtn {
+      background: #dc3545;
+      border: none;
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+    .deleteBtn:hover {
+      background-color: #a71d2a;
+    }
+    @media (max-width: 400px) {
+      #addContainer {
+        flex-direction: column;
+      }
+      #addBtn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Live Search Filter</h1>
+
+  <input type="search" id="searchInput" placeholder="Search users..." aria-label="Search users" />
+
+  <div id="addContainer">
+    <input type="text" id="addInput" placeholder="Add new user..." aria-label="Add new user" />
+    <button id="addBtn" aria-label="Add user">Add</button>
+  </div>
+
+  <ul id="resultsList" aria-live="polite" aria-label="Search results">
+    <!-- List items will be injected here -->
+  </ul>
+
+  <script src="../dist/index.js"></script>
+</body>
+</html>
